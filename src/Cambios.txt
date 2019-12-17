@@ -1,0 +1,90 @@
+03/10/18
+-Agregado control en ShinobiRoad.py para agacharse(Flecha de abajo, soltar para levantarse)
+	-Ahora puede pasar debajo de plataformas(agachado mide 36 pixeles de alto)
+-Agregado funcion para modificar tamaño del sprite dependiendo de la animación del personaje
+-Agregado animación de agacharse en player.py
+-Corregido reloj de las animaciones(No mostraba primer frame de animación)
+-Breve modificacion de estado del personaje.. cayendo(FALLING)
+-Agregada un frame a la animacion del salto en el lugar(STOPPED JUMPING-frame 4)
+-Agregado funcion para resetear el frame y reloj para la animacion(Simplifica el codigo)
+-Corregido caida fuerte del personaje(Si el personaje caia con un salto largo salía con la animacion de caminando pero con la velocidad de corriendo)
+-Agregado control en ShinobiRoad para atacar con la espada(Tecla 'z')
+-Agregado animacion de ataque.
+-Agregado metodo de daño (Reduce 1 punto de vida)(autodaño con tecla 'h')
+-Agregado animacion de daño.
+-Agregado metodo de morir(Muere cuando tiene 0 puntos de vida).
+-Agregado animación de morir
+-Agregado ataque de arrojar shuriken(Tecla 'x')
+-Agregado clase Shuriken(Sprite con sus animaciones)
+-Agregado atributo del personaje que contiene la lista de los shurikens arrojados.
+
+17/10/18
+-levels.py: 
+	-Agregado el shuriken al metodo shift_world.
+	-Agregado impacto en contra de enemigos en metodo update()
+	-Modificado el grupo de sprites por el grupo de sprites personalizado.(Para los enemigos) 
+	-Agregado algoritmo de agregación de enemigos(Ahora es igual que agregar plataformas, incluso más sencillo)(Se agregaron 3 de ejemplo)
+	-Agregado control de impactos entre enemigos y player.
+	-Agregado Varios enemigos
+
+
+-shuriken.py: 
+	-Corregida animacion
+	-Agregado tiempo de vida(2.5 segundos)
+	-Reducida la velocidad.
+
+-player.py:
+	-Mata al shuriken cuando su tiempo de vida es Cero.
+	-Crea el sprite de ataque al atacar con espada.
+	-Mata al sprite de ataque cuando su tiempo de vida es Cero.
+	-Corregido tamaño de sprite cuando Muere
+	-Agregado Sprite invisible para activar a los enemigos.
+	-Agregado atributo de muerto.
+	-Arreglado caida al vacio(Muere al caer)
+	-Arreglado reacción del personaje al caer.
+
+-attack.py(NUEVO):
+	-Sprite de ataque con un tiempo de vida de 0.3 segundos.
+
+-enemy.py(NUEVO):
+	-Tiene 1 punto de vida.
+	-Agregado inteligencia para tirar Shurikens.
+
+14/11/18
+-tiempo.py(NUEVO);
+	-Tiempo del juego, corre de forma descendente.
+	-Utilizado para la interfaz.
+
+-counter.py(NUEVO):
+	-Atributo que contiene un numero que se imprimirá.
+	-Contiene una imagen que se imprimirá a la derecha de número.
+	-Utilizado para la interfaz
+
+-gui.py(NUEVO):
+	-Contiene las clases para dibujar la interfaz de usuario.
+
+-levels.py:
+	-Añadido la interfaz de usuario.
+
+19/12/18
+-gui.py:
+	-Arreglado icono de vida.
+
+-player.py:
+	-Arreglado cuando cae al vacio, ahora la salud se pone a Cero.
+
+-levels.py:
+	-Agregado contador de enemigos derrotados
+	-Corregido reloj de tiempo de muerto de los enemigos(No desaparecian despues de muertos)
+	-Modificado limite del level 1.(Ahora termina cruzando el cartel)
+	-Eliminado clase del nivel 2
+
+-NinjaHero.py:
+	-Añadida funcion para actualizar puntaje en un archivo.
+	-Añadido una variable para el puntaje
+	-Añadido tiempo para salir al menu o puntajes.
+	-Añadido mostrar puntaje al terminar el nivel.
+
+-puntajes.py(NUEVO):
+	-Pantalla que muetra los puntajes.
+	-Carga los puntajes desde un archivo.
